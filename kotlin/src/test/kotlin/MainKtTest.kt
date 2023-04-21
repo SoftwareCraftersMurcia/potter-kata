@@ -8,6 +8,11 @@ class MainKtTest {
         Assertions.assertEquals(0, price(listOf<Int>()))
     }
 
+    @Test
+    fun one_item_in_bag() {
+        Assertions.assertEquals(0, price(listOf<Int>()))
+    }
+
     private fun price(books: List<Int>): Int {
         return 0
     }
