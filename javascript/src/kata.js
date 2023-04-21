@@ -1,5 +1,6 @@
-const renameMe = () => {
-    return true;
+const calculatePrice = (basket = []) => {
+    if (basket.length === 0) return 0;   
+    return 0
 };
 
-module.exports = {renameMe};
+module.exports = {calculatePrice};

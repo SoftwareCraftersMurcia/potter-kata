@@ -1,8 +1,8 @@
-const { renameMe } = require('../src/kata');
+const { calculatePrice } = require('../src/kata');
 
 describe("Kata", function () {
-  it("change_this_name", function () {
-   var result = renameMe();
-      expect(result).toBe(true);
+  it("returns 0 for an empty basket", function () {
+      const result = calculatePrice([]);
+      expect(result).toBe(0);
   });
 });
