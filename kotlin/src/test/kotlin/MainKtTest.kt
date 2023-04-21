@@ -27,12 +27,20 @@ class MainKtTest {
         Assertions.assertEquals(8 * 3 * 0.90, price(listOf<Int>(1, 2, 3)))
     }
 
+    @Test
+    fun for_different_items_in_bag_has_ten_percen_discount() {
+        Assertions.assertEquals(8 * 4 * 0.80, price(listOf<Int>(1, 2, 3, 4)))
+    }
+
     private fun price(books: List<Int>): Any {
         if (books.toSet().size == 2) {
             return books.size * 8 * 0.95
         }
         if (books.toSet().size == 3) {
             return books.size * 8 * 0.90
+        }
+        if (books.toSet().size == 4) {
+            return books.size * 8 * 0.80
         }
         return books.size * 8
     }
