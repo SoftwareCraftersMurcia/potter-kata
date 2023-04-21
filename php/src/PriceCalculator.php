@@ -14,6 +14,10 @@ class PriceCalculator
             return (8 * count($books) * 0.9);
         }
 
+        if (count(array_unique($books)) === 4) {
+            return (8 * count($books) * 0.8);
+        }
+
         if (count($books) >= 1) {
             return 8 * count($books);
         }
