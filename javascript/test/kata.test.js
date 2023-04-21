@@ -10,4 +10,20 @@ describe("Kata", function () {
       const result = calculatePrice([1]);
       expect(result).toBe(8);
   });
+
+  it("returns 8 for *any* book", function(){
+      const result = calculatePrice([2]);
+      expect(result).toBe(8);
+  });
+
+  it("return 16 for two books of the same volumen", function(){
+      const result = calculatePrice([1,1]);
+      expect(result).toBe(16);
+  });
+  
+  it("return 15.20 for two diferent books", function(){
+      const result = calculatePrice([1,2]);
+      expect(result).toBe(15.2);
+  });  
+
 });
