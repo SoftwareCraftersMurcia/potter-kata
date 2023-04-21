@@ -7,7 +7,11 @@ class PriceCalculator
     public function calculate(array $books): float
     {
         if (count(array_unique($books)) === 2) {
-            return (8 * count($books) * 0.95 );
+            return (8 * count($books) * 0.95);
+        }
+
+        if (count(array_unique($books)) === 3) {
+            return (8 * count($books) * 0.9);
         }
 
         if (count($books) >= 1) {
