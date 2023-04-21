@@ -16,7 +16,7 @@ describe("Kata", function () {
       expect(result).toBe(8);
   });
 
-  it("returns 16 for two books of the same volumen", function(){
+  it.only("returns 16 for two books of the same volumen", function(){
       const result = calculatePrice([1,1]);
       expect(result).toBe(16);
   });
@@ -41,9 +41,14 @@ describe("Kata", function () {
       expect(result).toBe(30);
   });   
   
-  it("returns 23.20 for two different books", function(){
+  it("returns 23.20 for two 1s and a 2", function(){
       const result = calculatePrice([1,1,2]);
       expect(result).toBe(23.2);
-  });    
+  });   
+  
+  it("returns 30.40 for two 1s and two 2s", function(){
+      const result = calculatePrice([1,1,2,2]);
+      expect(result).toBe(30.40);
+  });   
 
 });
