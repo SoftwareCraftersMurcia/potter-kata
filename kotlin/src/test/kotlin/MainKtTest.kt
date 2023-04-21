@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 class MainKtTest {
@@ -9,11 +8,11 @@ class MainKtTest {
     }
 
     @Test
-    fun one_item_in_bag() {
-        Assertions.assertEquals(0, price(listOf<Int>()))
+    fun one_item_in_bag_has_no_discount() {
+        Assertions.assertEquals(8, price(listOf<Int>(1)))
     }
 
     private fun price(books: List<Int>): Int {
-        return 0
+        return books.size * 8
     }
 }
