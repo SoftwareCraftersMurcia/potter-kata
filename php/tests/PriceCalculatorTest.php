@@ -8,10 +8,18 @@ use PHPUnit\Framework\TestCase;
 class PriceCalculatorTest extends TestCase
 {
     /** @test */
-    public function price_is_zero_for_no_books(): void
+    public function price_for_no_books(): void
     {
         $priceCalculator = new PriceCalculator();
 
         self::assertEquals(0, $priceCalculator->calculate([]));
+    }
+
+    /** @test */
+    public function price_for_one_book(): void
+    {
+        $priceCalculator = new PriceCalculator();
+
+        self::assertEquals(8, $priceCalculator->calculate([1]));
     }
 }

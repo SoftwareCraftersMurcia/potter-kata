@@ -4,8 +4,11 @@ namespace Kata;
 
 class PriceCalculator
 {
-    public function calculate(): int // cents
+    public function calculate(array $books): int // cents
     {
+        if (count($books) === 1) {
+            return 8;
+        }
         return 0;
     }
 }
