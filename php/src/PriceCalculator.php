@@ -6,8 +6,23 @@ class PriceCalculator
 {
     public function calculate(array $books): float
     {
-        $books_grouped = array_count_values($books);
+        $booksGrouped = array_count_values($books);
 
+        $basket = [];
+        foreach($booksGrouped as $book => $quantity) {
+            if ($quantity === 2) {
+                $basket[] = $book;
+                unset($books[$book]);
+            }
+        }
+
+        return array_sum(
+            array_map(fn($aBasket) => $this->calculateBasketPrice($aBasket), [$basket, $books])
+        );
+    }
+
+    public function calculateBasketPrice(array $books): float
+    {
         if (count(array_unique($books)) === 2) {
             return (8 * count($books) * 0.95);
         }
