@@ -23,13 +23,18 @@ class MainKtTest {
     }
 
     @Test
-    fun three_different_books_in_bag_has_ten_percen_discount() {
+    fun three_different_books_in_bag_has_10_percen_discount() {
         Assertions.assertEquals(8 * 3 * 0.90, price(listOf<Int>(1, 2, 3)))
     }
 
     @Test
-    fun four_different_books_in_bag_has_ten_percen_discount() {
+    fun four_different_books_in_bag_has_20_percen_discount() {
         Assertions.assertEquals(8 * 4 * 0.80, price(listOf<Int>(1, 2, 3, 4)))
+    }
+
+    @Test
+    fun five_different_books_in_bag_has_25_percen_discount() {
+        Assertions.assertEquals(8 * 5 * 0.75, price(listOf<Int>(1, 2, 3, 4, 5)))
     }
 
     private fun price(books: List<Int>): Any {
@@ -37,6 +42,7 @@ class MainKtTest {
             2 ->  books.size * 8 * 0.95
             3 ->  books.size * 8 * 0.90
             4 ->  books.size * 8 * 0.80
+            5 ->  books.size * 8 * 0.75
             else ->  books.size * 8
         }
     }
