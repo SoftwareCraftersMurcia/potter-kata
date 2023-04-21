@@ -21,9 +21,14 @@ describe("Kata", function () {
       expect(result).toBe(16);
   });
   
-  it("return 15.20 for two diferent books", function(){
+  it("return 15.20 for two different books", function(){
       const result = calculatePrice([1,2]);
       expect(result).toBe(15.2);
+  });  
+  
+  it("return 21.6 for three different books", function(){
+      const result = calculatePrice([1,2,3]);
+      expect(result).toBe(21.6);
   });  
 
 });
