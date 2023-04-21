@@ -13,22 +13,22 @@ class MainKtTest {
     }
 
     @Test
-    fun two_different_items_in_bag_has_5_percent_of_discount() {
+    fun two_different_books_in_bag_has_5_percent_of_discount() {
         Assertions.assertEquals(8 * 2 * 0.95, price(listOf<Int>(1, 2)))
     }
 
     @Test
-    fun two_same_items_in_bag_has_no_discount() {
+    fun two_same_books_in_bag_has_no_discount() {
         Assertions.assertEquals(8 * 2, price(listOf<Int>(1, 1)))
     }
 
     @Test
-    fun three_different_items_in_bag_has_ten_percen_discount() {
+    fun three_different_books_in_bag_has_ten_percen_discount() {
         Assertions.assertEquals(8 * 3 * 0.90, price(listOf<Int>(1, 2, 3)))
     }
 
     @Test
-    fun for_different_items_in_bag_has_ten_percen_discount() {
+    fun four_different_books_in_bag_has_ten_percen_discount() {
         Assertions.assertEquals(8 * 4 * 0.80, price(listOf<Int>(1, 2, 3, 4)))
     }
 
