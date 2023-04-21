@@ -23,10 +23,9 @@ class MainKtTest {
     }
 
     private fun price(books: List<Int>): Any {
-        if (setOf(books).size == 2) {
+        if (books.toSet().size == 2) {
             return books.size * 8 * 0.95
         }
-
         return books.size * 8
     }
 }
