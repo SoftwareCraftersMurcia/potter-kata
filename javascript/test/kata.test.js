@@ -5,4 +5,9 @@ describe("Kata", function () {
       const result = calculatePrice([]);
       expect(result).toBe(0);
   });
+
+  it("returns 8 for just one book", function(){
+      const result = calculatePrice([1]);
+      expect(result).toBe(8);
+  });
 });
