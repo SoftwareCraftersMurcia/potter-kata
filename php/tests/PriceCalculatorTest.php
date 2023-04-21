@@ -63,4 +63,13 @@ class PriceCalculatorTest extends TestCase
 
         self::assertEquals(8 * 5 * 0.75, $priceCalculator->calculate([1, 2, 3, 4, 5]));
     }
+
+
+    /** @test */
+    public function price_for_set_of_two_equals_books_and_one_different(): void
+    {
+        $priceCalculator = new PriceCalculator();
+
+        self::assertEquals(8 + (8 * 2 * 0.95), $priceCalculator->calculate([1, 1, 2]));
+    }
 }
