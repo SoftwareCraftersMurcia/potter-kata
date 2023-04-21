@@ -6,9 +6,10 @@ class PriceCalculator
 {
     public function calculate(array $books): int // cents
     {
-        if (count($books) === 1) {
-            return 8;
+        if (count($books) >= 1) {
+            return 8 * count($books);
         }
+
         return 0;
     }
 }

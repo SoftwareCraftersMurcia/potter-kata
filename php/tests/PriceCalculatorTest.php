@@ -22,4 +22,12 @@ class PriceCalculatorTest extends TestCase
 
         self::assertEquals(8, $priceCalculator->calculate([1]));
     }
+
+    /** @test */
+    public function price_for_three_equals_books(): void
+    {
+        $priceCalculator = new PriceCalculator();
+
+        self::assertEquals(8 * 3, $priceCalculator->calculate([1, 1 ,1]));
+    }
 }
