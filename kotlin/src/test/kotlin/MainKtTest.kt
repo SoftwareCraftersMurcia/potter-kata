@@ -33,15 +33,11 @@ class MainKtTest {
     }
 
     private fun price(books: List<Int>): Any {
-        if (books.toSet().size == 2) {
-            return books.size * 8 * 0.95
+        return when (books.toSet().size) {
+            2 ->  books.size * 8 * 0.95
+            3 ->  books.size * 8 * 0.90
+            4 ->  books.size * 8 * 0.80
+            else ->  books.size * 8
         }
-        if (books.toSet().size == 3) {
-            return books.size * 8 * 0.90
-        }
-        if (books.toSet().size == 4) {
-            return books.size * 8 * 0.80
-        }
-        return books.size * 8
     }
 }
