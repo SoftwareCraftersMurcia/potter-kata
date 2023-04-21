@@ -12,7 +12,7 @@ const calculatePrice = (basket = []) => {
     const differentBooks = (new Set(basket)).size;    
     const discount = DISCOUNTS[differentBooks] / 100;
     const total = basketSize * 8;
-    return total - discount * total;
+    return (basketSize - differentBooks) * 8 + differentBooks * 8  * (1 - discount);
 };
 
 module.exports = {calculatePrice};

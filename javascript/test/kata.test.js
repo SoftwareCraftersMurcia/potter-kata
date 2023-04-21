@@ -39,6 +39,11 @@ describe("Kata", function () {
   it("returns 30 for five different books", function(){
       const result = calculatePrice([1,2,3,4,5]);
       expect(result).toBe(30);
+  });   
+  
+  it("returns 23.20 for two different books", function(){
+      const result = calculatePrice([1,1,2]);
+      expect(result).toBe(23.2);
   });    
 
 });
